@@ -1,12 +1,13 @@
 const main = document.querySelector("main");
 
-url ="https://dog.ceo/api/breeds/image/random"
+url ="https://dog.ceo/api/breeds/image/random/10"
 
 fetch(url)
 .then(response=>response.json())
 .then (data=>{
-    const img = `<img src="${data.message}" alt ="Random dog images" />`
-    main.insertAdjacentHTML("beforeend", img); 
+    const images = data.message.map(image =>`<img src="${image}" alt = "Random dog images breed" >`)
+    .join('');
+    main.insertAdjacentHTML("beforeend", images); 
 
 });
 

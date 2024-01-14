@@ -9,5 +9,7 @@ fetch(url)
     .join('');
     main.insertAdjacentHTML("beforeend", images); 
 
-});
+})
+.catch(err=>console.log("There was problem fetching: " + err));
+
 
